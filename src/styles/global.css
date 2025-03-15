@@ -1,0 +1,388 @@
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ============================= */
+/*         HERO SECTION          */
+/* ============================= */
+.hero-title {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-buttons {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-image {
+  animation: slideIn 1.5s ease-in-out;
+  flex: 1;
+  text-align: right;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-image img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================= */
+/*     NEW UI IMPROVEMENTS       */
+/* ============================= */
+.hero-image {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+/* Modern Neon Glow Effect */
+.glowing-border {
+  position: absolute;
+  width: 30px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(40, 167, 69, 0.3) 10%, transparent 80%);
+  animation: pulseGlow 4s infinite ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Call-to-Action Button Glow */
+.btn-glow {
+  background: linear-gradient(90deg, #28a745, #218838);
+  color: white;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/*        NAVIGATION             */
+/* ============================= */
+.nav-hover {
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-hover:hover {
+  color: rgb(3, 99, 46) !important;
+}
+
+/* ============================= */
+/*       FLOATING ELEMENTS       */
+/* ============================= */
+.floating-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #28a745;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: floatAnimation 5s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+}
+
+/* ============================= */
+/*        FOOTER SECTION         */
+/* ============================= */
+footer {
+  width: 100%;
+  background-color: #11271c; /* Dark background */
+  color: white;
+  text-align: justify;
+  padding: 1rem 0;
+}
+
+/* ============================= */
+/*         SERVICES PAGE         */
+/* ============================= */
+.background-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('/images/abstract-bg.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.service-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-box:hover {
+  border-color: #28a745;
+}
+
+.icon {
+  font-size: 50px;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 40px 20px;
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.cta-section p {
+  color: white;
+}
+/* === Hero Section (Main Heading) === */
+.hero-text {
+    flex: 1;
+    text-align: left;
+    max-width: 550px;
+}
+
+/* === Testimonial Section Fixes === */
+.testimonial-section {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 400px;
+}
+
+/* Increase Image Size */
+.testimonial-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 15px 0;
+    color: #333;
+    max-width: 300px;
+}
+
+/* Name & Role */
+.testimonial-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #222;
+    margin-top: 5px;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* === Flexbox Fix for Proper Layout === */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Make sure it adapts on smaller screens */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        text-align: center;
+    }
+}
+
+
+/* Background Image ONLY for Homepage */
+.homepage-bg {
+  background: url('/images/background2.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Overlay for better contrast */
+.homepage-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white; /* Adjust overlay if needed */
+  z-index: -1;
+}
+
+/* Remove background for other pages */
+body {
+  background: none !important;
+}
+df-messenger {
+  --df-messenger-bot-message: #4CAF50; /* Customize bot message color */
+  --df-messenger-user-message: #4CAF50; /* Customize user message color */
+  --df-messenger-font-color: white;
+  --df-messenger-chat-background: white;
+  --df-messenger-button-titlebar-color: #4CAF50;
+  --df-messenger-button-titlebar-font-color: white;
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+/* Reduce chat pop-up size */
+df-messenger chat-box {
+  width: 100px !important; /* Adjust width */
+  height: 100px !important; /* Adjust height */
+  max-height: 40vh !important; /* Prevent it from taking up too much space */
+}
+df-messenger::part(chat) {
+  max-height: 400px !important;
+  width: 320px !important;
+}
+/* Stylish Navbar */
+.stylish-navbar {
+  background: linear-gradient(to right, #123038, #37883b);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navbar Hover & Active Links */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
+}
+
+.active-link {
+  color: #3bff45 !important;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Add an underline effect to active links */
+.active-link::after {
+  content: "";
+  width: 50%;
+  height: 3px;
+  background: #3bff45;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Animated Hamburger */
+.navbar-toggler {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler.toggle-active {
+  transform: rotate(90deg);
+}
+.logo-bg {
+  width: 50px;
+  height: 50px;
+  background-color: white;  /* White circular background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;  /* Makes it a perfect circle */
+  margin-right: 10px;
+}
