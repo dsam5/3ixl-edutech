@@ -54,61 +54,67 @@ export default function Home() {
         <div className="homepage-bg">
             <Navbar />
 
-            <main className="container d-flex align-items-center justify-content-center flex-column flex-md-row flex-grow-1 position-relative text-center">
-                {/* Left Side - Text */}
-                <div className="hero-text" data-aos="fade-right">
-                    <h1 className="display-4 fw-bold">
-                        <br />
-                        <br />
-                        Ready to{" "}
-                        <span className="text-success">
-                            <Typewriter
-                                options={{
-                                    strings: ["Achieve", "Elevate"],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
+            {/* White Background Rectangle */}
+            <div className="white-box">
+                <main className="container d-flex align-items-center justify-content-center flex-column flex-md-row flex-grow-1 position-relative text-center">
+                    {/* Left Side - Text */}
+                    <div className="hero-text" data-aos="fade-right">
+                        <h1 className="display-4 fw-bold">
+                            <br />
+                            Unlock {" "}
+                            Your <span className="text-success">Potential</span> in{" "}
+                            {/* <span className="text-success">Business Goals!</span> */}
+                            <span className="text-success">
+                                <Typewriter
+                                    options={{
+                                        strings: ["Tech and", "Innovation"],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </span>{" "}
+                        </h1>
+                        <p className="lead text-dark text-lg">
+    <span className="fs-6">Empowering Tech Excellence Since 2024</span> <br />
+    {/* <span className=" fs-6">🟢 Affordable pricing for all courses and services</span> <br />
+    <span className="text-success fs-6">🟢 Expert project assistance, design,and tailored tech solutions.</span>  <br />
+    <span className="fs-6">🟢 Gain in-demand tech skills with hands-on projects</span> <br />
+    <span className="text-success fs-6">🟢 Guaranteed quality—100% client satisfaction or revisions free!</span> */}
+</p>
+
+                        <div className="mt-4">
+                            <motion.div whileTap={{ scale: 0.9 }}>
+                                <Link href="/services" className="btn btn-glow btn-lg">
+                                    Get Started
+                                </Link>
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Right Side - Testimonials Section */}
+                    <div className="testimonial-box" data-aos="fade-left">
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -50 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <Image
+                                src={testimonials[index].image}
+                                alt={testimonials[index].name}
+                                width={250}
+                                height={250}
+                                quality={100} // Ensure max quality
+                                className="testimonial-image"
                             />
-                        </span>{" "}
-                        Your <span className="text-success">Career</span> and{" "}
-                        <span className="text-success">Business Goals!</span>
-                    </h1>
-                    <p className="lead text-muted">
-                        Learn in-demand tech skills with expert instructors & hands-on projects.
-                    </p>
-                    <div className="mt-4">
-                        <motion.div whileTap={{ scale: 0.9 }}>
-                            <Link href="/services" className="btn btn-glow btn-lg">
-                                Get Started
-                            </Link>
+                            <p className="testimonial-text">&quot;{testimonials[index].text}&quot;</p>
+                            <h5 className="testimonial-name">{testimonials[index].name}</h5>
+                            <p className="testimonial-role">{testimonials[index].role}</p>
                         </motion.div>
                     </div>
+                </main>
                 </div>
-
-                {/* Right Side - Testimonials Section */}
-                <div className="testimonial-section" data-aos="fade-left">
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -50 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <br /><br />
-                        <Image
-                            src={testimonials[index].image}
-                            alt={testimonials[index].name}
-                            width={250}
-                            height={250}
-                            quality={100} // Ensure max quality
-                            className="testimonial-image"
-                        />
-                        <p className="testimonial-text">&quot;{testimonials[index].text}&quot;</p>
-                        <h5 className="testimonial-name">{testimonials[index].name}</h5>
-                        <p className="testimonial-role">{testimonials[index].role}</p>
-                    </motion.div>
-                </div>
-            </main>
 
             {/* Chatbot */}
             <df-messenger

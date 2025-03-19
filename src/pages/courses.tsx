@@ -32,7 +32,7 @@ export default function Courses() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Gain hands-on skills in Data Analytics, Data Science, and Cybersecurity.
+          Master Data Analytics, Data Science & Cybersecurity in Three(3) Months!
         </motion.p>
       </motion.section>
 
@@ -48,7 +48,7 @@ export default function Courses() {
           <div className="col-md-5">
             <CourseCard 
               image="/images/excel.jpg"
-              title="Data Analysis with Excel"
+              title="Excel Analytics Mastery"
               description="Master PivotTables, Charts, and essential Excel analytics."
               price="GHS 150"
             />
