@@ -71,7 +71,7 @@ export default function Home() {
                                     cursorStyle="_"
                                     typeSpeed={100}
                                     deleteSpeed={50}
-                                    delaySpeed={1000}
+                                    delaySpeed={1500}
                                 />
                             </span>{" "}
                         </h1>
