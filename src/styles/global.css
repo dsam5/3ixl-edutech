@@ -367,30 +367,6 @@ footer {
     min-height: 100vh;
   }
 }
-
-df-messenger {
-  --df-messenger-bot-message: #4CAF50; /* Customize bot message color */
-  --df-messenger-user-message: #4CAF50; /* Customize user message color */
-  --df-messenger-font-color: white;
-  --df-messenger-chat-background: white;
-  --df-messenger-button-titlebar-color: #4CAF50;
-  --df-messenger-button-titlebar-font-color: white;
-  
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000; /* Ensure it stays above other elements */
-}
-/* Reduce chat pop-up size */
-df-messenger chat-box {
-  width: 100px !important; /* Adjust width */
-  height: 100px !important; /* Adjust height */
-  max-height: 40vh !important; /* Prevent it from taking up too much space */
-}
-df-messenger::part(chat) {
-  max-height: 400px !important;
-  width: 320px !important;
-}
 /* Stylish Navbar */
 .stylish-navbar {
   background: linear-gradient(to right, #123038, #37883b);
@@ -447,27 +423,24 @@ df-messenger::part(chat) {
   margin-right: 10px;
 }
 df-messenger {
-  --df-messenger-bot-message: #f1f1f1;
-  --df-messenger-button-titlebar-color: #4caf50;
-  --df-messenger-font-color: #000;
-  --df-messenger-send-icon: #4caf50;
-  --df-messenger-chat-background: #fff;
-  --df-messenger-user-message: #4caf50;
+  --df-messenger-button-titlebar-color: #008000; /* Customize button color */
+  --df-messenger-chat-background-color: #ffffff; /* Customize chat background */
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* Ensures it stays above other elements */
+  max-width: 350px; /* Adjust the width */
 }
 
-/* Resize Chatbot Window */
 df-messenger::part(chat-container) {
-  width: 80vw !important;
-  max-width: 350px !important;
-  height: 60vh !important;
-  bottom: 80px !important;
-  right: 15px !important;
-  border-radius: 10px !important;
+  max-height: 500px !important; /* Adjust height to prevent fullscreen */
+  width: 350px !important; /* Adjust width */
 }
 
-/* Resize Chat Button */
-df-messenger::part(button) {
-  transform: scale(0.8) !important;
-  bottom: 20px !important;
-  right: 15px !important;
+df-messenger::part(titlebar) {
+  background-color: #008000 !important; /* Customize title bar */
+}
+
+df-messenger::part(close-button) {
+  display: block !important;
 }

@@ -63,7 +63,7 @@ export default function Home() {
                             <br />
                             Unlock{" "}
                             Your <span className="text-success">Potential</span> in{" "}
-                            <span className="text-success">
+                            <span className="text-success"><br />
                                 <Typewriter
                                     words={["Tech and", "Innovation"]} // ✅ Corrected usage
                                     loop={0} // Infinite loop
