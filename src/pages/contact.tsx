@@ -38,6 +38,7 @@ export default function Contact() {
                 body: JSON.stringify(formData),
             });
 
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const data = await response.json();
 
             if (response.ok) {
@@ -46,6 +47,7 @@ export default function Contact() {
             } else {
                 setResponseMessage("❌ Failed to send your message. Please try again.");
             }
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             setResponseMessage("❌ An error occurred. Please try again.");
         }
@@ -95,7 +97,7 @@ export default function Contact() {
                                     <textarea 
                                         name="message" 
                                         className="form-control rounded-3 px-3 py-2 shadow-sm" 
-                                        rows="4" 
+                                        rows={4} 
                                         required 
                                         value={formData.message} 
                                         onChange={handleChange}
