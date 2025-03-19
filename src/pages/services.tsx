@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaLaptopCode, FaBrush, FaLightbulb, FaProjectDiagram } from "react-icons/fa";
 import { MdOutlineAutoGraph } from "react-icons/md";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-simple-typewriter"; // ✅ Correct Import
 
 export default function Services() {
     const services = [
@@ -24,13 +24,16 @@ export default function Services() {
                 <br />
                 <h1 className="fw-bold">
                     Our <span className="text-success">
-                        <Typewriter
-                            options={{
-                                strings: ["Services"],
-                                autoStart: true,
-                                loop: true,
-                            }}
-                        />
+                    <Typewriter
+                        words={["Services"]}
+                        loop={0} // Infinite loop
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={100}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                    />
+
                     </span>
                 </h1>
                 <p className="text-muted">Explore the services we offer to help you achieve your goals.</p>
