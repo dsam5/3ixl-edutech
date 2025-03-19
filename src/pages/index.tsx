@@ -4,7 +4,7 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-simple-typewriter"; // ✅ Correct Import
 import Image from "next/image";
 
 export default function Home() {
@@ -61,26 +61,23 @@ export default function Home() {
                     <div className="hero-text" data-aos="fade-right">
                         <h1 className="display-4 fw-bold">
                             <br />
-                            Unlock {" "}
+                            Unlock{" "}
                             Your <span className="text-success">Potential</span> in{" "}
-                            {/* <span className="text-success">Business Goals!</span> */}
                             <span className="text-success">
                                 <Typewriter
-                                    options={{
-                                        strings: ["Tech and", "Innovation"],
-                                        autoStart: true,
-                                        loop: true,
-                                    }}
+                                    words={["Tech and", "Innovation"]} // ✅ Corrected usage
+                                    loop={0} // Infinite loop
+                                    cursor
+                                    cursorStyle="_"
+                                    typeSpeed={100}
+                                    deleteSpeed={50}
+                                    delaySpeed={1000}
                                 />
                             </span>{" "}
                         </h1>
                         <p className="lead text-dark text-lg">
-    <span className="fs-6">Empowering Tech Excellence Since 2024</span> <br />
-    {/* <span className=" fs-6">🟢 Affordable pricing for all courses and services</span> <br />
-    <span className="text-success fs-6">🟢 Expert project assistance, design,and tailored tech solutions.</span>  <br />
-    <span className="fs-6">🟢 Gain in-demand tech skills with hands-on projects</span> <br />
-    <span className="text-success fs-6">🟢 Guaranteed quality—100% client satisfaction or revisions free!</span> */}
-</p>
+                            <span className="fs-6">Empowering Tech Excellence Since 2024</span> <br />
+                        </p>
 
                         <div className="mt-4">
                             <motion.div whileTap={{ scale: 0.9 }}>
@@ -114,15 +111,19 @@ export default function Home() {
                         </motion.div>
                     </div>
                 </main>
-                </div>
+            </div>
 
-            {/* Chatbot */}
-            <df-messenger
-                intent="WELCOME"
-                chat-title="3IXLEDUTECH"
-                agent-id="ea66b369-03cf-423b-98fb-d880347eb638"
-                language-code="en"
-            ></df-messenger>
+            {/* ✅ FIX: Chatbot wrapped in `dangerouslySetInnerHTML` */}
+            <div>
+                <div dangerouslySetInnerHTML={{
+                    __html: `<df-messenger
+                        intent="WELCOME"
+                        chat-title="3IXLEDUTECH"
+                        agent-id="ea66b369-03cf-423b-98fb-d880347eb638"
+                        language-code="en"
+                    ></df-messenger>` 
+                }} />
+            </div>
         </div>
     );
 }
